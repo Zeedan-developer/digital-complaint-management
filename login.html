@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Complaint System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="login-box">
+    <h1>Digital Complaint Management System</h1>
+    <h3>Welcome! Please log in below</h3>
+    <form>
+      <label for="role">Select Role</label>
+      <select id="role" required>
+        <option value="">-- Choose Role --</option>
+        <option value="student">Student</option>
+        <option value="admin">Admin</option>
+      </select>
+
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="Enter username" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter password" required />
+
+      <div class="captcha-box">
+        <input type="checkbox" id="captcha" required />
+        <label for="captcha">I'm not a robot</label>
+      </div>
+
+      <div class="form-buttons">
+        <button type="submit">Login</button>
+        <button type="reset" class="reset-btn">Reset</button>
+      </div>
+    </form>
+    <p class="footer">Project by: Team Alpha</p>
+  </div>
+</body>
+</html>

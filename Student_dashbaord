@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      min-height: 100vh;
+      background: linear-gradient(120deg, #1d2b64, #f8cdda);
+      color: #fff;
+    }
+
+    .sidebar {
+      width: 220px;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 20px;
+      font-size: 22px;
+      text-align: center;
+    }
+
+    .sidebar a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      transition: background 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sidebar a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .main {
+      flex: 1;
+      padding: 30px;
+      overflow-y: auto;
+    }
+
+    .main h1 {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+    }
+
+    th {
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .status {
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .pending {
+      background: #ffc107;
+      color: #000;
+    }
+
+    .resolved {
+      background: #28a745;
+      color: #fff;
+    }
+
+    .actions button {
+      padding: 6px 10px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-right: 5px;
+      font-size: 13px;
+    }
+
+    .actions .edit {
+      background: #17a2b8;
+      color: white;
+    }
+
+    .actions .delete {
+      background: #dc3545;
+      color: white;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 13px;
+      color: #ddd;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+        justify-content: space-around;
+      }
+      .main {
+        padding: 20px;
+      }
+      table th, table td {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Student Panel</h2>
+    <a href="#"><i class="fas fa-home"></i>Dashboard</a>
+    <a href="#"><i class="fas fa-file-alt"></i>New Complaint</a>
+    <a href="#"><i class="fas fa-list"></i>My Complaints</a>
+    <a href="#"><i class="fas fa-sign-out-alt"></i>Logout</a>
+  </div>
+  <div class="main">
+    <h1>Welcome, Student</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Subject</th>
+          <th>Date</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>101</td>
+          <td>Internet Not Working</td>
+          <td>2025-07-20</td>
+          <td><span class="status pending">Pending</span></td>
+          <td class="actions">
+            <button class="edit">Edit</button>
+            <button class="delete">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td>102</td>
+          <td>AC not working in Lab</td>
+          <td>2025-07-18</td>
+          <td><span class="status resolved">Resolved</span></td>
+          <td class="actions">
+            <button class="edit">Edit</button>
+            <button class="delete">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <footer>
+      &copy; 2025 Team Alpha | Student Dashboard
+    </footer>
+  </div>
+</body>
+</html>
